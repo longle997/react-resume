@@ -1,0 +1,37 @@
+{
+    "appHeader": {
+        "brand": "Le Huynh Long",
+        "home": "Home",
+        "project": "Project",
+        "contact": "Contact",
+        "about": "About"
+    },
+    "heroSection": {
+        "exp": "My Skill",
+        "cv": "Get Resume"
+    },
+    "introSection": {
+        "about": "About me",
+        "and": "and",
+        "heading1": "I fell in love with programming and I have at least learnt something, I think… 🤷‍♂️",
+        "heading2": "I am fluent in classics like",
+        "heading3": "My field of Interest's are building new",
+        "heading4": "Web Technologies and Products"
+    },
+    "experience": {
+        "title": "Experiences"
+    },
+    "experienceModal": {
+        "duration": "Duration",
+        "description": "Description",
+        "responsibilities": "Key Responsibilities",
+        "technologies": "Technologies"
+    },
+    "skill": {
+        "title": "Skills"
+    },
+    "project": {
+        "title": "My Recent Works",
+        "description": "Here are a few projects I've worked on recently."
+    }
+}

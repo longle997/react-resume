@@ -1,0 +1,70 @@
+{
+    /**
+     * TYPESCRIPT CONFIGURATION FOR REACT PORTFOLIO
+     * 
+     * This configuration file sets up TypeScript compilation for the React portfolio project.
+     * It includes modern JavaScript features, React JSX support, and strict type checking
+     * to ensure code quality and development experience.
+     * 
+     * Key Configuration Areas:
+     * - Target and Module System: ES2020 with ESNext modules for modern browsers
+     * - React Support: JSX compilation and React-specific optimizations  
+     * - Type Checking: Strict mode with comprehensive linting rules
+     * - Build Integration: Vite bundler compatibility and optimizations
+     * - Development Experience: Import resolution and module detection
+     */
+    "compilerOptions": {
+        // Target JavaScript version for compilation output (ES2020 for modern browsers)
+        "target": "ES2020",
+        // Use modern class field definitions for better compatibility
+        "useDefineForClassFields": true,
+        // Include type definitions for ES2020 features and browser APIs
+        "lib": [
+            "ES2020", // Modern JavaScript features (optional chaining, nullish coalescing, etc.)
+            "DOM", // Browser APIs (document, window, etc.)
+            "DOM.Iterable" // Iterable DOM collections (NodeList, HTMLCollection, etc.)
+        ],
+        // Use latest ES module system for tree-shaking and modern imports
+        "module": "ESNext",
+        // Skip type checking of declaration files for faster compilation
+        "skipLibCheck": true,
+        /* Bundler mode - Vite-specific optimizations */
+        // Use bundler-specific module resolution for better import handling
+        "moduleResolution": "bundler",
+        // Allow importing TypeScript files with extensions (Vite handles this)
+        "allowImportingTsExtensions": true,
+        // Treat each file as a separate module for better tree-shaking
+        "isolatedModules": true,
+        // Force module detection for all files
+        "moduleDetection": "force",
+        // Don't emit JavaScript files (Vite handles compilation)
+        "noEmit": true,
+        // Use React 17+ JSX transform (no need to import React in JSX files)
+        "jsx": "react-jsx",
+        /* Linting and Type Safety */
+        // Enable all strict type checking options
+        "strict": true,
+        // Flag unused local variables as errors
+        "noUnusedLocals": true,
+        // Flag unused function parameters as errors  
+        "noUnusedParameters": true,
+        // Require explicit handling of all switch statement cases
+        "noFallthroughCasesInSwitch": true,
+        // Allow synthetic default imports for better CommonJS compatibility
+        "allowSyntheticDefaultImports": true,
+        // Enable interoperability between CommonJS and ES modules
+        "esModuleInterop": true,
+        // Allow importing JSON files as modules
+        "resolveJsonModule": true,
+        // Ensure consistent file naming across different operating systems
+        "forceConsistentCasingInFileNames": true
+    },
+    // Include all TypeScript files in the src directory
+    "include": [
+        "src" // Compile all .ts, .tsx, .js, .jsx files in src folder and subdirectories
+    ],
+    // Exclude common directories that shouldn't be compiled
+    "exclude": [
+        "node_modules" // Don't compile third-party dependencies
+    ]
+}

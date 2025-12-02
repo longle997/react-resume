@@ -1,0 +1,143 @@
+@startuml React Portfolio Code Flow
+
+title React Portfolio - Application Code Flow Activity Diagram
+
+|Browser|
+start
+:User accesses application URL;
+
+|Vite Server|
+:Load index.html;
+:Inject Vite client script;
+:Load main.jsx entry point;
+
+|React Application|
+:Import React & ReactDOM;
+:Import App component;
+:Import global styles;
+
+:ReactDOM.createRoot();
+note right
+  Create root element
+  from DOM (#root)
+end note
+
+:Render <App /> component;
+
+|App Component|
+:Initialize App state;
+:Setup React Router;
+
+partition "Routing Setup" {
+  :Define Routes;
+  note right
+    - Home (/)
+    - About (/about)
+    - Projects (/projects)
+    - Skills (/skills)
+    - Contact (/contact)
+  end note
+}
+
+|Component Rendering|
+:Render Layout Components;
+note right
+  - Header/Navbar
+  - Main Content Area
+  - Footer
+end note
+
+switch (Current Route?)
+case (Home)
+  :Render Hero Section;
+  :Render Featured Projects;
+  :Render Skills Summary;
+case (About)
+  :Render About Section;
+  :Load personal info;
+  :Display biography;
+  :Show timeline/experience;
+case (Projects)
+  :Render Projects Grid;
+  :Load projects data;
+  :Map through projects array;
+  :Render ProjectCard components;
+case (Skills)
+  :Render Skills Section;
+  :Load skills data;
+  :Categorize skills;
+  :Display skill cards/badges;
+case (Contact)
+  :Render Contact Form;
+  :Initialize form state;
+endswitch
+
+:Page Rendered;
+
+|User Interaction|
+:User interacts with page;
+
+switch (Interaction Type?)
+case (Navigation Click)
+  :Update URL via Router;
+  :Trigger route change;
+  :Re-render component;
+case (Form Submission)
+  :Validate form data;
+  if (Valid?) then (yes)
+    :Submit form;
+    :Show success message;
+  else (no)
+    :Display error messages;
+  endif
+case (Button/Link Click)
+  :Execute onClick handler;
+  if (External Link?) then (yes)
+    :Open in new tab;
+  else (no)
+    :Navigate internally;
+  endif
+case (Scroll Event)
+  :Trigger scroll animations;
+  :Update navbar transparency;
+  :Lazy load images;
+endswitch
+
+|Component Lifecycle|
+partition "Component Effects" {
+  :useEffect hooks execute;
+  note right
+    - Fetch data
+    - Add event listeners
+    - Initialize animations
+  end note
+  
+  :Cleanup on unmount;
+  note right
+    - Remove listeners
+    - Cancel subscriptions
+  end note
+}
+
+|State Management|
+if (State Update Needed?) then (yes)
+  :Call setState/dispatch;
+  :Trigger re-render;
+  :Update virtual DOM;
+  :Reconcile with real DOM;
+  :Apply changes to browser;
+else (no)
+  :Maintain current state;
+endif
+
+|Performance|
+partition "Optimization" {
+  :React.memo for components;
+  :useMemo for expensive computations;
+  :useCallback for function references;
+  :Code splitting with lazy();
+}
+
+stop
+
+@enduml
