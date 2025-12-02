@@ -16,10 +16,10 @@ const Experience = () => {
 
     // State for modal visibility and selected experience
     const [showModal, setShowModal] = useState(false);
-    const [selectedExperience, setSelectedExperience] = useState(null);
+    const [selectedExperience, setSelectedExperience] = useState<any>(null);
 
     // Handler to open modal with selected experience
-    const handleExperienceClick = (experience) => {
+    const handleExperienceClick = (experience: any) => {
         setSelectedExperience(experience);
         setShowModal(true);
     };
@@ -65,15 +65,15 @@ const Experience = () => {
                                         }
                                         <div className="experience-container">
                                             <div className="duration-text">
-                                                <p>{experience.duration[i18n.resolvedLanguage]}</p>
+                                                <p>{experience.duration[i18n.resolvedLanguage || 'en']}</p>
                                             </div>
                                             <div className="details">
                                                 <div className="icon">
                                                     <BsPersonWorkspace size={36} />
                                                 </div>
                                                 <div className="info">
-                                                    <p className="title">{experience.title[i18n.resolvedLanguage]}</p>
-                                                    <p className="company">{experience.company[i18n.resolvedLanguage]}</p>
+                                                    <p className="title">{experience.title[i18n.resolvedLanguage || 'en']}</p>
+                                                    <p className="company">{experience.company[i18n.resolvedLanguage || 'en']}</p>
                                                 </div>
                                             </div>
                                         </div>

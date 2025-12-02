@@ -30,10 +30,7 @@
  */
 
 // Import social media icons from react-icons library
-import { FaFacebook } from "react-icons/fa6"; // Facebook icon
-import { SiUdemy } from "react-icons/si"; // Udemy platform icon
-import { FaTiktok } from "react-icons/fa"; // TikTok icon
-import { SiLinkedin } from "react-icons/si"; // YouTube Shorts icon
+import { SiLinkedin } from "react-icons/si"; // LinkedIn icon
 
 // Define TypeScript interface for component props
 interface SocialMediaProps {

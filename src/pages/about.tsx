@@ -31,7 +31,7 @@ import { useTranslation } from "react-i18next";
 
 // AboutPage functional component
 const AboutPage = () => {
-    const { t, i18n } = useTranslation();
+    const { i18n } = useTranslation();
     return (
         // Main wrapper with about-specific styling class
         <div className="about-screen">

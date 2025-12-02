@@ -45,6 +45,7 @@ export const APP_DATA: AppData = {
 interface LocalizedText {
     vi: string; // Vietnamese text
     en: string; // English text
+    [key: string]: string; // Allow indexing with any string key
 }
 
 // TypeScript interface for work experience entries
@@ -54,7 +55,7 @@ interface Experience {
     company: LocalizedText; // Company name in multiple languages
     duration: LocalizedText; // Employment period in multiple languages
     description: LocalizedText; // Job description in multiple languages
-    responsibilities: LocalizedText[]; // Job responsibilities in multiple languages
+    responsibilities: { vi: string[]; en: string[] }; // Job responsibilities in multiple languages
     technologies: string[]; // Technologies used in the job
 }
 

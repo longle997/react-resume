@@ -21,7 +21,7 @@ const ExperienceModal = ({ show, onHide, experience }: ExperienceModalProps) => 
 
     if (!experience) return null;
 
-    const currentLang = i18n.resolvedLanguage;
+    const currentLang = i18n.resolvedLanguage || 'en';
     console.log(currentLang);
 
     return (
@@ -49,11 +49,11 @@ const ExperienceModal = ({ show, onHide, experience }: ExperienceModalProps) => 
                     </div>
                 )}
 
-                {experience.responsibilities && experience.responsibilities[currentLang] && (
+                {experience.responsibilities && currentLang && experience.responsibilities[currentLang] && (
                     <div className="mb-3">
                         <strong>{t("experienceModal.responsibilities")}:</strong>
                         <ul>
-                            {experience.responsibilities[currentLang].map((resp, index) => (
+                            {experience.responsibilities[currentLang].map((resp: string, index: number) => (
                                 <li key={index}>{resp}</li>
                             ))}
                         </ul>

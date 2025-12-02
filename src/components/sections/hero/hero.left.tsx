@@ -5,7 +5,6 @@ import './hero.scss';
 import ResizeButton from "../resize.button";
 import { APP_DATA } from '../../../helpers/data';
 import { MdFileDownload } from "react-icons/md";
-import { AiFillFire } from "react-icons/ai";
 import resumePDF from '../../../assets/resume/long_resume.pdf';
 
 /**
